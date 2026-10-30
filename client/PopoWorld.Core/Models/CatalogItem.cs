@@ -63,6 +63,6 @@ public class InventoryItem : BaseModel
     [PrimaryKey("item_id", false)]
     public string ItemId { get; set; } = string.Empty;
 
-    [Column("acquired_at")]
+    [Column("acquired_at", ignoreOnInsert: true, ignoreOnUpdate: true)]
     public DateTime AcquiredAt { get; set; }
 }

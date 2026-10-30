@@ -1,0 +1,24 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet restore client/PopoWorld.sln
+      - run: dotnet build client/PopoWorld.sln --no-restore -c Release
+      - run: dotnet test client/PopoWorld.Core.Tests --no-build -c Release
+      - name: publish single exe
+        run: dotnet publish client/PopoWorld.App -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -o publish
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PopoWorld-win-x64
+          path: publish/PopoWorld.exe

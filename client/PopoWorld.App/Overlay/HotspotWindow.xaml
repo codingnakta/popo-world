@@ -1,0 +1,16 @@
+<Window x:Class="PopoWorld.App.Overlay.HotspotWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PopoWorld Hotspot"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        Focusable="False"
+        Topmost="True"
+        Width="112" Height="112"
+        Cursor="Hand">
+    <!-- 알파 1/255: 눈에는 안 보이지만 마우스 이벤트는 받는다 -->
+    <Grid Background="#01000000" />
+</Window>

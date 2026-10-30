@@ -1,0 +1,14 @@
+[
+  { "id": "char_hamster", "category": "character", "name": "햄스터", "price": 0, "sort": 1, "image_url": null, "effect": null },
+  { "id": "char_cat", "category": "character", "name": "고양이", "price": 0, "sort": 2, "image_url": null, "effect": null },
+  { "id": "char_dog", "category": "character", "name": "강아지", "price": 0, "sort": 3, "image_url": null, "effect": null },
+  { "id": "char_penguin", "category": "character", "name": "펭귄", "price": 30, "sort": 4, "image_url": "https://YOUR-PROJECT.supabase.co/storage/v1/object/public/assets/characters/char_penguin/sheet.png", "effect": null },
+  { "id": "char_rabbit", "category": "character", "name": "토끼", "price": 30, "sort": 5, "image_url": "https://YOUR-PROJECT.supabase.co/storage/v1/object/public/assets/characters/char_rabbit/sheet.png", "effect": null },
+  { "id": "bubble_basic", "category": "bubble", "name": "기본 말풍선", "price": 0, "sort": 1, "image_url": null, "effect": null },
+  { "id": "bubble_pixel", "category": "bubble", "name": "픽셀 테두리", "price": 15, "sort": 2, "image_url": "https://YOUR-PROJECT.supabase.co/storage/v1/object/public/assets/items/bubble_pixel.png", "effect": null },
+  { "id": "bubble_cloud", "category": "bubble", "name": "구름", "price": 15, "sort": 3, "image_url": "https://YOUR-PROJECT.supabase.co/storage/v1/object/public/assets/items/bubble_cloud.png", "effect": null },
+  { "id": "ball_soft", "category": "ball", "name": "말랑공", "price": 0, "sort": 1, "image_url": null, "effect": null },
+  { "id": "ball_snow", "category": "ball", "name": "눈덩이", "price": 10, "sort": 2, "image_url": "https://YOUR-PROJECT.supabase.co/storage/v1/object/public/assets/items/ball_snow.png", "effect": "white_flash" },
+  { "id": "ball_tomato", "category": "ball", "name": "토마토", "price": 10, "sort": 3, "image_url": "https://YOUR-PROJECT.supabase.co/storage/v1/object/public/assets/items/ball_tomato.png", "effect": "red_stain" },
+  { "id": "chair_small", "category": "chair", "name": "작은 의자", "price": 20, "sort": 1, "image_url": "https://YOUR-PROJECT.supabase.co/storage/v1/object/public/assets/items/chair_small.png", "effect": null }
+]

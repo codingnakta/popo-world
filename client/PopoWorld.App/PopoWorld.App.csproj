@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>PopoWorld.App</RootNamespace>
+    <AssemblyName>PopoWorld</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>0.1.0</Version>
+    <!-- Windows 가 아닌 PC(CI)에서도 컴파일만은 되게 -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- 단일 exe publish (dotnet publish, win-x64, self-contained, PublishSingleFile) 를 위한 설정 -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="supabase" Version="8.6.0" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="System.IO" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PopoWorld.Core\PopoWorld.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 기본 캐릭터 3종, 기본 공·말풍선, 효과음은 exe 에 포함 -->
+    <Resource Include="Assets\**\*.png;Assets\**\*.json;Assets\**\*.wav" />
+    <!-- SUPABASE_URL / SUPABASE_ANON_KEY. exe 옆에 같은 이름의 파일이 있으면 그 파일이 우선한다. -->
+    <EmbeddedResource Include="appsettings.json" LogicalName="appsettings.json" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+<Window x:Class="PopoWorld.App.Store.StoreWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="포포 상점"
+        Width="420" Height="460"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True">
+    <DockPanel Margin="12">
+        <DockPanel DockPanel.Dock="Top" Margin="0,0,0,8">
+            <TextBlock x:Name="BalanceText" DockPanel.Dock="Right" FontWeight="Bold" FontSize="14" Text="0 포포" VerticalAlignment="Center" />
+            <TextBlock Text="아이템을 누르면 내 캐릭터에 미리 입혀 볼 수 있어요." Foreground="Gray" FontSize="11" VerticalAlignment="Center" />
+        </DockPanel>
+        <TextBlock DockPanel.Dock="Bottom" x:Name="StatusText" Foreground="Gray" FontSize="11" Margin="0,8,0,0" TextWrapping="Wrap" />
+        <TabControl x:Name="Tabs" SelectionChanged="Tabs_SelectionChanged" />
+    </DockPanel>
+</Window>

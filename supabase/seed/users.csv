@@ -1,0 +1,4 @@
+email,password,name,is_admin
+admin@example.com,바꿔주세요,다연,true
+friend1@example.com,바꿔주세요,친구1,false
+friend2@example.com,바꿔주세요,친구2,false

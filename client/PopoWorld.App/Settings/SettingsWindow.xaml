@@ -1,0 +1,81 @@
+<Window x:Class="PopoWorld.App.Settings.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="포포월드 설정"
+        Width="380" SizeToContent="Height"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True">
+    <Grid Margin="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="모니터" VerticalAlignment="Center" />
+        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="MonitorBox" Margin="0,3" />
+
+        <TextBlock Grid.Row="1" Text="위치(변)" VerticalAlignment="Center" />
+        <ComboBox Grid.Row="1" Grid.Column="1" x:Name="EdgeBox" Margin="0,3">
+            <ComboBoxItem Tag="bottom">아래</ComboBoxItem>
+            <ComboBoxItem Tag="top">위</ComboBoxItem>
+            <ComboBoxItem Tag="left">왼쪽</ComboBoxItem>
+            <ComboBoxItem Tag="right">오른쪽</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="2" Text="영역 길이" VerticalAlignment="Center" />
+        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="SpanBox" Margin="0,3">
+            <ComboBoxItem Tag="1">전체</ComboBoxItem>
+            <ComboBoxItem Tag="0.5">절반</ComboBoxItem>
+            <ComboBoxItem Tag="0.333">1/3</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="3" Text="표시" VerticalAlignment="Top" Margin="0,6,0,0" />
+        <StackPanel Grid.Row="3" Grid.Column="1" Margin="0,3">
+            <CheckBox x:Name="ShowOfflineBox" Content="오프라인 친구도 보기(회색)" Margin="0,3" />
+            <CheckBox x:Name="QuietModeBox" Content="조용히 모드 (소리·알림 끔)" Margin="0,3" />
+            <CheckBox x:Name="StartWithWindowsBox" Content="Windows 시작 시 자동 실행" Margin="0,3" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="4" Text="소리" VerticalAlignment="Center" />
+        <DockPanel Grid.Row="4" Grid.Column="1" Margin="0,3">
+            <CheckBox x:Name="SoundEnabledBox" Content="켜기" VerticalAlignment="Center" Margin="0,0,10,0" />
+            <Slider x:Name="VolumeSlider" Minimum="0" Maximum="1" TickFrequency="0.1" IsSnapToTickEnabled="True" VerticalAlignment="Center" />
+        </DockPanel>
+
+        <TextBlock Grid.Row="5" Text="입력창 단축키" VerticalAlignment="Center" />
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="ComposerHotkeyBox" Margin="0,3" />
+
+        <TextBlock Grid.Row="6" Text="숨기기 단축키" VerticalAlignment="Center" />
+        <TextBox Grid.Row="6" Grid.Column="1" x:Name="ToggleHotkeyBox" Margin="0,3" />
+
+        <TextBlock Grid.Row="7" Text="내 이름" VerticalAlignment="Center" />
+        <TextBox Grid.Row="7" Grid.Column="1" x:Name="NameBox" MaxLength="8" Margin="0,3" />
+
+        <TextBlock Grid.Row="8" Grid.ColumnSpan="2" x:Name="ErrorText" Foreground="Crimson" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,6,0,0" />
+
+        <TextBlock Grid.Row="9" Grid.ColumnSpan="2" x:Name="LogPathText" Foreground="Gray" FontSize="11" TextWrapping="Wrap" Margin="0,8,0,0" />
+
+        <DockPanel Grid.Row="10" Grid.ColumnSpan="2" Margin="0,14,0,0">
+            <Button x:Name="LogoutButton" DockPanel.Dock="Left" Content="로그아웃" Padding="10,4" Click="LogoutButton_Click" />
+            <Button x:Name="OpenLogsButton" DockPanel.Dock="Left" Content="로그 폴더" Padding="10,4" Margin="8,0,0,0" Click="OpenLogsButton_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="취소" Padding="14,4" Margin="0,0,8,0" IsCancel="True" />
+                <Button x:Name="SaveButton" Content="저장" Padding="14,4" Click="SaveButton_Click" IsDefault="True" />
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

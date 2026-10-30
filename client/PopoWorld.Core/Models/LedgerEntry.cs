@@ -36,10 +36,14 @@ public class LedgerEntry : BaseModel
     [Column("request_id")]
     public Guid RequestId { get; set; }
 
+    /// <summary>선물 상대. gift_in 이면 보낸 사람, gift_out 이면 받은 사람. 그 외 null.</summary>
+    [Column("peer_id")]
+    public Guid? PeerId { get; set; }
+
     [Column("memo")]
     public string? Memo { get; set; }
 
-    [Column("created_at")]
+    [Column("created_at", ignoreOnInsert: true, ignoreOnUpdate: true)]
     public DateTime CreatedAt { get; set; }
 }
 

@@ -15,6 +15,6 @@ public class Message : BaseModel
     [Column("body")]
     public string Body { get; set; } = string.Empty;
 
-    [Column("created_at")]
+    [Column("created_at", ignoreOnInsert: true, ignoreOnUpdate: true)]
     public DateTime CreatedAt { get; set; }
 }

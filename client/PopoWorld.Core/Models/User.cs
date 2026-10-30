@@ -31,7 +31,7 @@ public class User : BaseModel
     [Column("last_seen")]
     public DateTime LastSeen { get; set; }
 
-    [Column("created_at")]
+    [Column("created_at", ignoreOnInsert: true, ignoreOnUpdate: true)]
     public DateTime CreatedAt { get; set; }
 
     /// <summary>슬롯 이름으로 장착 아이템 id를 읽는다.</summary>
