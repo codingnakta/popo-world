@@ -1,0 +1,18 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+publish/
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# 로컬 비밀 (anon key 는 appsettings.json 에 넣어도 되지만 service_role 은 절대 커밋 금지)
+*.local.json
+.env
+.claude/

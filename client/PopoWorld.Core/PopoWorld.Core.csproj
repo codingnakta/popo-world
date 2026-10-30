@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>PopoWorld.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Postgrest 속성([Table], [Column])만 쓴다. WPF 참조는 없다. -->
+    <PackageReference Include="Supabase.Postgrest" Version="8.6.0" />
+  </ItemGroup>
+
+</Project>
